@@ -501,6 +501,12 @@ video {
 .mb-4 {
   margin-bottom: 1rem;
 }
+.mr-3 {
+  margin-right: 0.75rem;
+}
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
 .flex {
   display: flex;
 }
@@ -509,6 +515,9 @@ video {
 }
 .h-screen {
   height: 100vh;
+}
+.h-2 {
+  height: 0.5rem;
 }
 .w-3\/5 {
   width: 60%;
@@ -543,7 +552,22 @@ video {
 .justify-items-center {
   justify-items: center;
 }
+.rounded {
+  border-radius: 0.25rem;
+}
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
+}
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
