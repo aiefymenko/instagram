@@ -498,6 +498,9 @@ video {
   margin-left: auto;
   margin-right: auto;
 }
+.mb-4 {
+  margin-bottom: 1rem;
+}
 .flex {
   display: flex;
 }
@@ -510,9 +513,37 @@ video {
 .w-3\/5 {
   width: 60%;
 }
+.w-2\/5 {
+  width: 40%;
+}
+.w-full {
+  width: 100%;
+}
 .max-w-screen-md {
   max-width: 768px;
 }
+.flex-col {
+  flex-direction: column;
+}
 .items-center {
   align-items: center;
+}
+.justify-end {
+  justify-content: flex-end;
+}
+.justify-center {
+  justify-content: center;
+}
+.justify-around {
+  justify-content: space-around;
+}
+.justify-evenly {
+  justify-content: space-evenly;
+}
+.justify-items-center {
+  justify-items: center;
+}
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
 }
