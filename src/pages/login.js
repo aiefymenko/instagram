@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import FirebaseContext from '../context/firebase'
 
 export default function Login() {
@@ -26,6 +26,7 @@ export default function Login() {
       <img src="/images/iphone-image.png" alt="Iphone with profile" />
     </div>
     <div className="flex flex-col w-1/2">
+      <div className='"flex flex-col items-center bg-white p-4 border border-gray-primary mb-4 rounded'>
       <h1 className='flex justify-center w-full'>
         <img src='/images/logo.png' alt = 'Instagram logo' />
         </h1>
@@ -36,14 +37,14 @@ export default function Login() {
           aria-label='Enter your email address'
           type = 'text'
           placeholder='Email address'
-          className='text-sm text-gray-base w-full mr-3 py-5 px-4 h-2 border-gray-primery rounded mb-2'
+          className='text-sm text-gray-base w-full mr-3 py-5 px-4 h-2 border border-gray-primery rounded mb-2'
           onChange={({target}) => setEmailAddress(target.value)}
           />
                     <input
           aria-label='Enter your password'
           type = 'password'
           placeholder='Password'
-          className='text-sm text-gray-base w-full mr-3 py-5 px-4 h-2 border-gray-primery rounded mb-2'
+          className='text-sm text-gray-base w-full mr-3 py-5 px-4 h-2 border border-gray-primary rounded mb-2'
           onChange={({target}) => setPassword(target.value)}
           />
           <button
@@ -52,6 +53,14 @@ export default function Login() {
           className={`bg-blue-500 text-white w-full rounded h-8 font-bold
           ${isInvalid && 'opacity-50'}`}> Log In </button>
         </form>
+    </div>
+    <div className='flex justify-center items-center flex-column w-full bg-white p-4 border border-gray-primary'>
+      <p className='text-sm'>Don't have an account? {``}
+      <Link to='/signup' className='font-bold text-blue-medium'>
+        Sign Up
+      </Link>
+      </p>
+    </div>
     </div>
     </div>
   )
