@@ -22,10 +22,10 @@ export default function Login() {
 
   return (
     <div className="container flex  mx-auto max  -w-screen-md items-center h-screen">
-    <div className="flex justify-end w-3/5 h-1/2">
+    <div className="flex justify-end w-1/2 h-5/6">
       <img src="/images/iphone-image.png" alt="Iphone with profile" />
     </div>
-    <div className="flex flex-col w-2/5">
+    <div className="flex flex-col w-1/2">
       <h1 className='flex justify-center w-full'>
         <img src='/images/logo.png' alt = 'Instagram logo' />
         </h1>
@@ -36,6 +36,13 @@ export default function Login() {
           aria-label='Enter your email address'
           type = 'text'
           placeholder='Email address'
+          className='text-sm text-gray-base w-full mr-3 py-5 px-4 h-2 border-gray-primery rounded mb-2'
+          onChange={({target}) => console.log(target.value)}
+          />
+                    <input
+          aria-label='Enter your password'
+          type = 'password'
+          placeholder='Password'
           className='text-sm text-gray-base w-full mr-3 py-5 px-4 h-2 border-gray-primery rounded mb-2'
           onChange={({target}) => console.log(target.value)}
           />
