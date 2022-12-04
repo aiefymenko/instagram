@@ -2,7 +2,7 @@ import Firebase from 'firebase/compat/app';
 import 'firebase/compat/firestore';
 import 'firebase/compat/auth';
 
-//import seed files
+//import seed files once
 // import { seedDatabase } from '../seed';
 
 const config = {
