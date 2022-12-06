@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import FirebaseContext from '../context/firebase'
 import * as ROUTES from "../constants/routes";
+import { doesUserNameExist } from '../services/frebase';
 
 export default function SignUp() {
   const history = useNavigate();
@@ -18,13 +19,15 @@ export default function SignUp() {
   const handleSignUp = async (event) => {
     event.preventDefault();
 
-    try {
+    const userNameExist = await doesUserNameExist(username);
+
+    // try {
 
       
-    } catch (error) {
+    // } catch (error) {
 
       
-    }
+    // }
 
   }
 
@@ -87,7 +90,7 @@ export default function SignUp() {
     <div className='flex justify-center items-center flex-col w-full bg-white p-4 rounded border border-gray-primary'>
       <p className='text-sm'>Have an account? {``}
       <Link to={ROUTES.LOGIN} className='font-bold text-blue-medium'>
-        Login
+        Log In
       </Link>
       </p>
     </div>
