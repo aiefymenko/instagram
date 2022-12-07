@@ -1,5 +1,4 @@
-import { Result } from 'postcss';
-import { firebase, FieldValue} from '../lib/firebase';
+ import { firebase, FieldValue} from '../lib/firebase';
 
 export async function doesUserNameExist(username) {
   const result = await firebase 

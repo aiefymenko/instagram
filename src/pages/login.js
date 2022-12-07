@@ -4,7 +4,7 @@ import FirebaseContext from '../context/firebase'
 import * as ROUTES from "../constants/routes";
 
 export default function Login() {
-  const history = useNavigate();
+  const navigate = useNavigate();
   const { firebase } = useContext(FirebaseContext);
 
   const [emailAddress, setEmailAddress] = useState('');
@@ -18,7 +18,7 @@ export default function Login() {
 
     try {
       await firebase.auth().signInWithEmailAndPassword(emailAddress, password);
-      history.push(ROUTES.DASHBOARD);
+      navigate(ROUTES.DASHBOARD);
       
     } catch (error) {
       setEmailAddress('');

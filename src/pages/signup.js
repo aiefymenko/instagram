@@ -2,10 +2,10 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import FirebaseContext from '../context/firebase'
 import * as ROUTES from "../constants/routes";
-import { doesUserNameExist } from '../services/frebase';
+import { doesUserNameExist } from '../services/firebase';
 
 export default function SignUp() {
-  const history = useNavigate();
+  const navigate= useNavigate();
   const { firebase } = useContext(FirebaseContext);
 
   const [username, setUsername] = useState('');
@@ -20,14 +20,41 @@ export default function SignUp() {
     event.preventDefault();
 
     const userNameExist = await doesUserNameExist(username);
+    if (!userNameExist.length) {
+      try {
+        const createdUserResult = await firebase
+        .auth()
+        .createUserWithEmailAndPassword(emailAddress, password);
 
-    // try {
 
-      
-    // } catch (error) {
+        //authentification 
+        // emailAddrees & password & username
+        await createdUserResult.user.updateProfile({
+          displayName: username
+        })
 
-      
-    // }
+        //firebase user collection (create & document)
+        await firebase.firestore().collection('users').add({
+          userId: createdUserResult.user.uid,
+          username: username.toLowerCase(),
+          fullName,
+          emailAddress: emailAddress.toLowerCase(),
+          following: [],
+          dateCreated: Date.now()
+
+        });
+        navigate(ROUTES.DASHBOARD);
+      } catch (error) {
+        setFullName('');
+        setEmailAddress('');
+        setPassword('');
+        setError(error.message);
+        
+      }
+    } else {
+      setError('That username is already taken, please try another')
+    }
+
 
   }
 
