@@ -6,13 +6,15 @@ import * as ROUTES from './constants/routes';
 const Login = lazy(() => import('./pages/login'));
 const SignUp = lazy(() => import('./pages/signup'));
 const NotFound = lazy(() => import('./pages/not-found'));
+const Dashboard = lazy(() => import('./pages/dashboad'));
 
 
-function App() {
+export default function App() {
   return (
     <Router>
       <Suspense fallback= {<p>Loading...</p>} >
         <Routes>
+          <Route path={ROUTES.DASHBOARD} element={<Dashboard />} />
           <Route path={ROUTES.LOGIN} element={<Login />} />
           <Route path={ROUTES.SIGN_UP} element={<SignUp />} />
           <Route path='*' element={<NotFound />} />
@@ -20,6 +22,4 @@ function App() {
       </Suspense>
     </Router>
   );
-}
-
-export default App;
+};
