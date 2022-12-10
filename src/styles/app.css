@@ -510,6 +510,9 @@ video {
 .mt-2 {
   margin-top: 0.5rem;
 }
+.mb-8 {
+  margin-bottom: 2rem;
+}
 .flex {
   display: flex;
 }
@@ -530,6 +533,9 @@ video {
 }
 .h-4\/5 {
   height: 80%;
+}
+.h-16 {
+  height: 4rem;
 }
 .w-1\/2 {
   width: 50%;
@@ -569,6 +575,9 @@ video {
 }
 .border {
   border-width: 1px;
+}
+.border-b {
+  border-bottom-width: 1px;
 }
 .border-gray-primary {
   --tw-border-opacity: 1;
