@@ -1,4 +1,4 @@
- import { firebase, FieldValue} from '../lib/firebase';
+ import { firebase} from '../lib/firebase';
 
 export async function doesUserNameExist(username) {
   const result = await firebase 
@@ -6,7 +6,6 @@ export async function doesUserNameExist(username) {
   .collection('users')
   .where('username', '==', username)
   .get();
-
 
   return result.docs.map((user) => user.data().length > 0)
 }
