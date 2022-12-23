@@ -31,7 +31,7 @@ export default function Suggestions({ userId, following, loggedInUserDocId }) {
             key={profile.docId}
             profileDocId={profile.docId}
             username={profile.username}
-            profrileId={profile.userId}
+            profileId={profile.userId}
             userId={userId}
             loggedInUserDocId={loggedInUserDocId}
             />
