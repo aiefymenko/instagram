@@ -4,6 +4,11 @@ import PropTypes from 'prop-types';
 
 export default function SuggestedProfile({userDocId, username, profileId, userId }) {
   const [followed, setFollowed] = useState(false);
+
+  async function handleFollowUser() {
+    setFollowed(true);
+  }
+
   return !followed ? (
       <div className='flex flex-row items-center align-items justify-between'>
         <div className='flex items-center justify-between'>
@@ -18,7 +23,7 @@ export default function SuggestedProfile({userDocId, username, profileId, userId
         </div>
         <button className='text-xs font-bold text-blue-medium'
         type='button'
-        onClick={() => console.log('Follow this user')}
+        onClick={() => {handleFollowUser()}}
         >
           Follow
         </button>
