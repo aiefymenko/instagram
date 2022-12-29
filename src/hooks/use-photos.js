@@ -10,15 +10,18 @@ const {
 
 useEffect(() => {
 async function getTimeLinePhotos() {
-  const {following} = await getUserByUserId(userId);
+  const [{following}] = await getUserByUserId(userId);
   let followedUserPhotos = [];
 //does the user actually follow people
   if (following.length > 0) {
     followedUserPhotos = await getPhotos(userId, following)
   }
+  //re-arrange array by newest date created
+  followedUserPhotos.sort((a, b) => b.dateCreated - a.dateCreated);
+  setPhotos(followedUserPhotos);
 }
-console.log(userId);
-}, [])
+getTimeLinePhotos();
+}, [userId])
 
 return {photos};
 }
