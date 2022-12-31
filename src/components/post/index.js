@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 export default function Post({content}) {
 
-  console.log('content', content);
+  
   return <p>I am post</p>
 }
 
