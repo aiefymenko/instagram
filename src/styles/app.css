@@ -561,6 +561,9 @@ video {
 .h-2 {
   height: 0.5rem;
 }
+.h-4 {
+  height: 1rem;
+}
 .w-full {
   width: 100%;
 }
@@ -662,6 +665,10 @@ video {
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
+}
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 .text-center {
   text-align: center;
