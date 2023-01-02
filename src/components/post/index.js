@@ -1,9 +1,10 @@
 import { useRef } from "react";
 import PropTypes from 'prop-types';
+import Header from "./Header";
 
 export default function Post({content}) {
 
-  
+  <Header username={content.username} />
   return <p>I am post</p>
 }
 
