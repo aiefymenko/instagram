@@ -4,8 +4,8 @@ import Header from "./Header";
 
 export default function Post({content}) {
 
-  <Header username={content.username} />
-  return <p>I am post</p>
+  
+  return <Header username={content.username} />
 }
 
 Post.propTypes = {
