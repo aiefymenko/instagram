@@ -5,7 +5,10 @@ import Header from "./Header";
 export default function Post({content}) {
 
   
-  return <Header username={content.username} />
+  return (
+  <div className="rounded col-span-4 border bg-white border-gray-primary mb-16">
+    <Header username={content.username} />
+    </div> )
 }
 
 Post.propTypes = {
