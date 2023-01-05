@@ -82,14 +82,14 @@ export async function getPhotos(userId, following) {
 
   const photosWithUserDetails = await Promise.all(
     userFollowedPhotos.map(async (photo) => {
-      let userLikedPhotos = false;
+      let userLikedPhoto = false;
       if (photo.likes.includes(userId)) {
-        userLikedPhotos = true;
+        userLikedPhoto = true;
       }
       const user = await getUserByUserId(photo.userId);
       const {username} = user[0];
 
-      return {username, ...photo, userLikedPhotos}
+      return {username, ...photo, userLikedPhoto}
     })
   );
 
