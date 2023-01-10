@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import {useState} from 'react';
 import { formatDistance } from 'date-fns';
 import { Link } from 'react-router-dom';
-import { comment } from 'postcss';
+import AddComment from './Add-Comment';
 
 export default function Comments({docId, comments: allComments, posted, commentInput }) {
   const [comments, setComments] = useState(allComments);
