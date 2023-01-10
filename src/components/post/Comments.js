@@ -30,6 +30,12 @@ export default function Comments({docId, comments: allComments, posted, commentI
         {formatDistance(posted, new Date())} ago
       </p>
     </div>
+    <AddComment 
+    docId={docId}
+    comments = {comments} 
+    setComments = {setComments}
+    commentInput = {commentInput}
+    />
     </>
   )
 }
