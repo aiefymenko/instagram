@@ -5,7 +5,7 @@ export default function IsUserLoggedIn ({user, loggedInPath, children, ...rest})
  return (
   <Route
   {...rest}
-  redner={({location}) => {
+  render={({location}) => {
     if (!user) {
       return children;
     }
