@@ -5,25 +5,31 @@ import * as ROUTES from '../constants/routes';
 
 export default function Profile() {
   const {username} = useParams();
+  const [user, setUser] = useState('');
   const [userExist, setUserExist] = useState(false);
   const history = useNavigate();
 
   useEffect(() => {
     async function checkUserExist() {
-      const doesUserExist = await getUserByUsername(username);
-      if (doesUserExist.length > 0) {
+      const user = await getUserByUsername(username);
+      if (user.length > 0) {
+        setUser(user);
         setUserExist(true);
       } else {
-        setUserExist(false);
         history(ROUTES.NOT_FOUND);
       }
     }
+    checkUserExist();
   
 
-  }, [])
+  }, [history, username])
   
 
-  return (
-    <div>Profile</div>
-  )
+  return userExist ? (
+    <div className="bg-gray-background">
+      <div className="mx-auto max-w-screen-lg">
+        {username}
+      </div>
+    </div>
+  ) : null;
 }
