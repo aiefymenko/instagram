@@ -20,10 +20,17 @@ export default function Profile ({username}) {
       const photos = getUserPhotosByUsername(username);
       dispatch({profile: user, photosCollection: photos, followerCount: user.followers.length}  )
     }
-    getProfileInfoAndPhotos();
+    if (username) {
+      getProfileInfoAndPhotos();
+    }
+    
   }, [username])
   
   return <>
     <Header />
     </>
+}
+
+Profile.propType = {
+  username: PropTypes.string.isRequired
 }

@@ -33,7 +33,7 @@ export default function Profile() {
     <div className="bg-gray-background">
       <Header /> 
       <div className="mx-auto max-w-screen-lg">
-        <UserProfile /> {user.fullName}
+        <UserProfile username={username} /> {user.fullName}
       </div>
     </div>
   ) : null;
