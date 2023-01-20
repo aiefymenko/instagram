@@ -112,7 +112,8 @@ export async function getUserByUsername(username) {
 
 
 export async function getUserPhotosByUsername(username) {
-  const [user] = getUserByUsername(username);
+  const [user] = await getUserByUsername(username);
+  console.log('user', user);
   const result = await firebase 
   .firestore()
   .collection('photos')

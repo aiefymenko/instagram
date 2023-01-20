@@ -23,7 +23,6 @@ export default function Profile() {
       }
     }
     checkUserExist();
-    console.log('user', user);
   
 
   }, [username, history])
@@ -33,7 +32,7 @@ export default function Profile() {
     <div className="bg-gray-background">
       <Header /> 
       <div className="mx-auto max-w-screen-lg">
-        <UserProfile username={username} /> {user.fullName}
+        <UserProfile user={user} /> {user.fullName}
       </div>
     </div>
   ) : null;
