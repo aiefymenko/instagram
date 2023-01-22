@@ -30,7 +30,7 @@ export default function Profile ({user}) {
     photosCount={photosCollection ? photosCollection.length : 0 }
     profile={profile}
     followerCount={followerCount}
-    setFollowwerCount={dispatch} />
+    setFollowerCount={dispatch} />
     <Photos photos={photosCollection} />
     </>
 }

@@ -11,7 +11,12 @@ export default function Header({photosCount, profile, followerCount, setFollower
 
 Header.propTypes = {
   photosCount: PropTypes.number.isRequired,
-  profile: PropTypes.object.isRequired,
   followerCount: PropTypes.number.isRequired,
-  setFollowerCount: PropTypes.func.isRequired
+  setFollowerCount: PropTypes.func.isRequired,
+  profile: PropTypes.shape({
+    docId: PropTypes.string,
+    userId: PropTypes.string,
+    fullName: PropTypes.string,
+    following: PropTypes.array
+  }).isRequired
 }
