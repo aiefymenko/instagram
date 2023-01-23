@@ -1,9 +1,32 @@
 import { useState, useEffect } from "react";
 import PropTypes from 'prop-types';
 import Skeleton from "react-loading-skeleton";
+import useUser from '../../hooks/use-user';
+import { isUserFollowingProfile } from '../../services/firebase'
 
-export default function Header({photosCount, profile, followerCount, setFollowerCount}) {
+export default function Header({
+  photosCount,
+  followerCount, 
+  setFollowerCount,
+  profile: {docId: profileDocId, userId: profileUserId, fullName, following = []}
+ }) {
+  const {user} = useUser();
   const [isFollowingProfile, setIsFollowingProfile] = useState(false);
+
+  useEffect(() => {
+    const isLoggedInUserFollowingProfile = async () => {
+      const isFollowing = await isUserFollowingProfile(user.username, profileUserId);
+      setIsFollowingProfile(isFollowing);
+    }
+      if (user.username && profileUserId) {
+        isLoggedInUserFollowingProfile();
+      }
+    return () => {
+     
+    }
+  }, [profileUserId, user.username])
+  
+
   return (
     <div>Header</div>
   )
