@@ -136,7 +136,7 @@ export async function isUserFollowingProfile(loggedInUserUsername, profileUserId
 
   const [response = {}] = result.docs.map((item) => ({
     ...item.data(),
-    doctId: item.id
+    docId: item.id
   }));
   console.log('response', response);
 
