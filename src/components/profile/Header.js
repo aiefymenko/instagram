@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
 import { useState, useEffect } from "react";
 import PropTypes from 'prop-types';
 import Skeleton from "react-loading-skeleton";
@@ -27,9 +28,15 @@ export default function Header({
   }, [profileUserId, user.username])
   
 
-  return (
-    <div>Header</div>
-  )
+  return <div className="grid grid-cols-3 gap-4 justify-between mx-auto max-w-screen-lg">
+    <div className="container flex justify-center">
+      <img 
+      className="rounded-full h-40 w-40 flex"
+      alt={`${user.username} profile picture`}
+      src={`/images/avatars/${user.username}.jpg`}
+      />
+    </div>
+  </div>
 }
 
 Header.propTypes = {
