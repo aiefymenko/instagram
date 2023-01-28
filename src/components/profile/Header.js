@@ -36,6 +36,13 @@ export default function Header({
       src={`/images/avatars/${user.username}.jpg`}
       />)}
     </div>
+    <div className="flex items-center justify-center flex-col col-span-2">
+      <div className="container flex items-center">
+        <p className="text-wxl mr-4">
+          {user.username}
+        </p>
+      </div>
+    </div>
   </div>
 }
 
