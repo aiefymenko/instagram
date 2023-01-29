@@ -23,7 +23,7 @@ export default function Header({
   const handleToggleFollow = () => {
     setIsFollowingProfile((isFollowingProfile) => !isFollowingProfile);
     setFollowerCount({
-      followerCount: isFollowingProfile ? followers.length - 1 : followers.length - 1
+      followerCount: isFollowingProfile ? followerCount - 1 : followerCount + 1
     });
     console.log('!!!!!!', followerCount);
   }
@@ -73,15 +73,18 @@ export default function Header({
           <span className="font-bold">{photosCount}</span>
           </p>
           <p className="mr-10"> 
-          <span className="font-bold">{followers.length} </span> 
+          <span className="font-bold">{followerCount} </span> 
            {` `}
-          {followers.length === 1 ? `follower` : `followers`}
+          {followerCount === 1 ? `follower` : `followers`}
           </p>
           <p className="mr-10"> 
           <span className="font-bold">{following.length}</span> following
           </p>
           </>
         )}
+      </div>
+      <div className="container mt-4">
+        <p className="font-medium">{!fullName ? <Skeleton count={1} height={24} /> : fullName}</p>
       </div>
     </div>
   </div>
