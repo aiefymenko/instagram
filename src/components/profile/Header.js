@@ -9,10 +9,14 @@ export default function Header({
   photosCount,
   followerCount, 
   setFollowerCount,
-  profile: {docId: profileDocId, userId: profileUserId, fullName, following = []}
+  profile: {docId: profileDocId, userId: profileUserId, fullName, following = [], username: profileUsername}
  }) {
   const {user} = useUser();
   const [isFollowingProfile, setIsFollowingProfile] = useState(false);
+  const activeBtnFollow = user.username && user.username !== profileUsername;
+  const handleToggleFollow = () => {
+    return 1;
+  }
 
   useEffect(() => {
     const isLoggedInUserFollowingProfile = async () => {
@@ -33,14 +37,22 @@ export default function Header({
       {user.username && (<img 
       className="rounded-full h-40 w-40 flex"
       alt={`${user.username} profile picture`}
-      src={`/images/avatars/${user.username}.jpg`}
+      src={`/images/avatars/${profileUsername}.jpg`}
       />)}
     </div>
     <div className="flex items-center justify-center flex-col col-span-2">
       <div className="container flex items-center">
         <p className="text-wxl mr-4">
-          {user.username}
-        </p>
+          {profileUsername}</p>
+        {activeBtnFollow && (
+          <button 
+          className="bg-blue-medium font-bold text-sm rounded text-white w-20 h-8 "
+          type='button'
+          onClick={handleToggleFollow}
+          >
+            {isFollowingProfile ? 'Unfollow' : 'Follow'}
+          </button>
+        )}
       </div>
     </div>
   </div>
