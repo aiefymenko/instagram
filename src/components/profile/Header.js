@@ -25,6 +25,7 @@ export default function Header({
     setFollowerCount({
       followerCount: isFollowingProfile ? followers.length - 1 : followers.length - 1
     });
+    console.log('!!!!!!', followerCount);
   }
 
   useEffect(() => {
@@ -61,6 +62,25 @@ export default function Header({
           >
             {isFollowingProfile ? 'Unfollow' : 'Follow'}
           </button>
+        )}
+      </div>
+      <div className="container flex mt-4">
+        {followers === undefined || following === undefined ? (
+          <Skeleton count = {1} width={677} height={24} />
+        ) : (
+          <>
+          <p className="mr-10"> 
+          <span className="font-bold">{photosCount}</span>
+          </p>
+          <p className="mr-10"> 
+          <span className="font-bold">{followers.length} </span> 
+           {` `}
+          {followers.length === 1 ? `follower` : `followers`}
+          </p>
+          <p className="mr-10"> 
+          <span className="font-bold">{following.length}</span> following
+          </p>
+          </>
         )}
       </div>
     </div>
