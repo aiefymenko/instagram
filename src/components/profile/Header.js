@@ -31,7 +31,7 @@ export default function Header({
   useEffect(() => {
     const isLoggedInUserFollowingProfile = async () => {
       const isFollowing = await isUserFollowingProfile(user.username, profileUserId);
-      setIsFollowingProfile(!!isFollowing);
+      setIsFollowingProfile(isFollowing);
     }
       if (user.username && profileUserId) {
         isLoggedInUserFollowingProfile();
