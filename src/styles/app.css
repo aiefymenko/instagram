@@ -494,6 +494,9 @@ video {
     max-width: 1536px;
   }
 }
+.relative {
+  position: relative;
+}
 .col-span-2 {
   grid-column: span 2 / span 2;
 }
@@ -554,6 +557,12 @@ video {
 }
 .mr-10 {
   margin-right: 2.5rem;
+}
+.mt-12 {
+  margin-top: 3rem;
+}
+.mb-12 {
+  margin-bottom: 3rem;
 }
 .flex {
   display: flex;
@@ -651,6 +660,9 @@ video {
 }
 .gap-5 {
   gap: 1.25rem;
+}
+.gap-8 {
+  gap: 2rem;
 }
 .rounded-full {
   border-radius: 9999px;
