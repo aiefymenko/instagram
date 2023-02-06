@@ -1,3 +1,4 @@
+/* eslint-disable no-mixed-operators */
 import PropTypes from 'prop-types';
 import Skeleton from 'react-loading-skeleton';
 

@@ -22,7 +22,7 @@ export default function Profile ({user}) {
     }
       getProfileInfoAndPhotos();
     
-  }, [user.username])
+  }, [user, user.username])
   
   return <>
     <Header 
