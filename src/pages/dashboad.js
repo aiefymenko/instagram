@@ -6,11 +6,14 @@ import Sidebar from '../components/Sidebar';
 import useUser from '../hooks/use-user';
 import LoggedInUserContext from '../context/logged-in-user';
 
-export default function Dashboard({user: loggedInUser}) {
-  const {user} = useUser(loggedInUser.uid);
+
+
+export default function Dashboard({ user: loggedInUser }) {
+  const { user } = useUser(loggedInUser.uid);
   useEffect(() => {
-    document.title = "Instagram";
+    document.title = 'Instagram';
   }, []);
+
 
   return (
     <LoggedInUserContext.Provider value={{user}}>
@@ -27,4 +30,4 @@ export default function Dashboard({user: loggedInUser}) {
 
 Dashboard.propTypes = {
   user: PropTypes.object.isRequired
-}
+};

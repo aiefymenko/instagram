@@ -22,7 +22,7 @@ export default function App() {
       <Suspense fallback= {<p>Loading...</p>} >
         <Routes>
           <Route element={<ProtectedRoute user={user} />}>
-            <Route element={<Dashboard />} path={ROUTES.DASHBOARD} exact />
+            <Route element={<Dashboard user={user}/>} path={ROUTES.DASHBOARD} exact />
           </Route>
           <Route path={ROUTES.LOGIN} element={<Login />} />
           <Route path={ROUTES.SIGN_UP} element={<SignUp />} />
