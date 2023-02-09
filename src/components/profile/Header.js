@@ -48,7 +48,12 @@ export default function Header({
       className="rounded-full h-40 w-40 flex"
       alt={`${user.username} profile picture`}
       src={`/images/avatars/${profileUsername}.jpg`}
-      />)}
+      />) : 
+      (<img 
+        className="rounded-full h-40 w-40 flex"
+        alt={"Default profile picture"}
+        src="/images/avatars/default.jpg"
+        />)}
     </div>
     <div className="flex items-center justify-center flex-col col-span-2">
       <div className="container flex items-center">
