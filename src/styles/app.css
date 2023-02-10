@@ -759,6 +759,9 @@ video {
 .pb-0 {
   padding-bottom: 0px;
 }
+.pt-1 {
+  padding-top: 0.25rem;
+}
 .text-center {
   text-align: center;
 }
