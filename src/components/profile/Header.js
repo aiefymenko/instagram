@@ -76,6 +76,8 @@ export default function Header({
           <>
           <p className="mr-10"> 
           <span className="font-bold">{photosCount}</span>
+          {` `}
+          {photosCount === 1 ? `photo` : `photos`}
           </p>
           <p className="mr-10"> 
           <span className="font-bold">{followerCount} </span> 
