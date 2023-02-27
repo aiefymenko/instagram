@@ -14,7 +14,7 @@ Dashboard (Home page)
 
 !["Dashboard"](./docs/dashboard.png)
 
-Prodile Page (with posts)
+Profile Page (with posts)
 
 !["Profile Page"](./docs/profile.png)
 
@@ -23,4 +23,4 @@ Empty profile
 !["Profile without any posts"](./docs/empty_profile.png)
 
 Sign Up Page
-!["Sign Up Page"](./docs/sigh_up.png)
+!["Sign Up Page"](./docs/sign_up.png)
